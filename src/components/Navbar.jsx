@@ -26,12 +26,12 @@ function Navbar() {
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="nav-container">
-                <Link to="/" className="nav-brand">
+                <a href="https://kongu.ac.in/" target="_blank" rel="noopener noreferrer" className="nav-brand">
                     <div className="college-brand">
                         <img src={kecLogo} alt="KEC Logo" className="college-main-logo" />
                         <span className="college-name">Kongu Engineering College</span>
                     </div>
-                </Link>
+                </a>
                 <div
                     className={`nav-toggle ${isMobileMenuOpen ? 'active' : ''}`}
                     id="navToggle"

@@ -147,9 +147,16 @@ function OfficeBearers() {
                         <div className="section-line"></div>
                     </div>
                     <div className="bearers-grid single">
-                        {officeBearers.facultyCoordinator.map((bearer, index) =>
-                            renderBearerCard(bearer, index, "fas fa-user-tie")
-                        )}
+                        <a
+                            href="https://docs.google.com/document/u/0/d/e/2PACX-1vRiG8xYN5cKmBsoyOgYJLlvwq7bVRN0b8AVAkQu0SYD0YeS06OrtTHiYHTWUZS1pg/pub?pli=1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: 'none', display: 'block', cursor: 'pointer' }}
+                        >
+                            {officeBearers.facultyCoordinator.map((bearer, index) =>
+                                renderBearerCard(bearer, index, "fas fa-user-tie")
+                            )}
+                        </a>
                     </div>
                 </div>
             </section>

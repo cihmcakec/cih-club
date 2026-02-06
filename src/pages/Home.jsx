@@ -129,7 +129,9 @@ function Home() {
                         <div className="title-row bottom">
                             <span className="glitch" data-text="INTELLIGENCE HUB">INTELLIGENCE HUB</span>
                         </div>
-                        <div className="association-tag">ASSOCIATED WITH MCA ASSOCIATION</div>
+                        <a href="https://kongu.ac.in/mca" target="_blank" rel="noopener noreferrer" className="association-tag">
+                            ASSOCIATED WITH MCA ASSOCIATION
+                        </a>
                     </h1>
                     <p className="hero-subtitle">
                         Empowering the Next Generation of Cybersecurity Professionals
@@ -190,19 +192,27 @@ function Home() {
                     <h2 className="section-title">Faculty Mentorship</h2>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center', padding: '0 20px' }}>
-                    <div className="faculty-card" style={{ maxWidth: '400px' }}>
-                        <img
-                            src={faculty.image}
-                            alt={faculty.name}
-                            className="faculty-image"
-                            onError={(e) => { e.target.src = logo; }}
-                        />
-                        <h4 className="faculty-name" style={{ fontSize: '1.8rem', color: '#fff', fontFamily: 'Orbitron' }}>{faculty.name}</h4>
-                        <span className="faculty-role" style={{ color: '#00f3ff', textTransform: 'uppercase', letterSpacing: '2px' }}>{faculty.role}</span>
-                        <p style={{ marginTop: '15px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.6', textAlign: 'center' }}>
-                            {faculty.desc}
-                        </p>
-                    </div>
+                    <a
+                        href="https://docs.google.com/document/u/0/d/e/2PACX-1vRiG8xYN5cKmBsoyOgYJLlvwq7bVRN0b8AVAkQu0SYD0YeS06OrtTHiYHTWUZS1pg/pub?pli=1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="faculty-card-link"
+                        style={{ textDecoration: 'none', display: 'block' }}
+                    >
+                        <div className="faculty-card" style={{ maxWidth: '400px', cursor: 'pointer' }}>
+                            <img
+                                src={faculty.image}
+                                alt={faculty.name}
+                                className="faculty-image"
+                                onError={(e) => { e.target.src = logo; }}
+                            />
+                            <h4 className="faculty-name" style={{ fontSize: '1.8rem', color: '#fff', fontFamily: 'Orbitron' }}>{faculty.name}</h4>
+                            <span className="faculty-role" style={{ color: '#00f3ff', textTransform: 'uppercase', letterSpacing: '2px' }}>{faculty.role}</span>
+                            <p style={{ marginTop: '15px', color: 'rgba(255,255,255,0.7)', lineHeight: '1.6', textAlign: 'center' }}>
+                                {faculty.desc}
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </section>
 
