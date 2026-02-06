@@ -76,6 +76,7 @@ function Navbar() {
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             Events
+                            <span className="nav-indicator"></span>
                         </Link>
                     </li>
                     <li>
