@@ -188,3 +188,13 @@ section p,
     opacity: 0;
   }
 }
+
+@media (max-width: 768px) {
+
+  section p,
+  .section-description,
+  .about-text p {
+    text-align: left;
+    font-size: 0.95rem;
+  }
+}

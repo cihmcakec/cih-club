@@ -661,4 +661,68 @@
     .mission-grid {
         grid-template-columns: 1fr;
     }
+
+    .title-row.top {
+        font-size: 3.5rem;
+    }
+
+    .title-row.bottom {
+        font-size: 2.5rem;
+    }
+
+    .hero-logo-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-logo {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title-row.top {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .title-row.bottom {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        margin-top: -5px;
+    }
+
+    .association-tag {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-logo-container {
+        width: 130px;
+        height: 130px;
+        padding: 15px;
+    }
+
+    .hero-logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .faculty-name {
+        font-size: 1.5rem !important;
+    }
+
+    .about-hub-section {
+        padding: 40px 15px !important;
+    }
 }

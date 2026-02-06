@@ -197,6 +197,20 @@
         right: 0;
     }
 
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .college-name {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .college-main-logo {
+        width: 40px;
+        height: 40px;
+    }
+
     .nav-toggle.active span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
