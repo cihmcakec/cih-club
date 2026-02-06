@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
+import groupPhoto from '../assets/group_photo.jpg';
 import './Gallery.css';
 
 function Gallery() {
     const galleryItems = [
         {
             id: 1,
-            title: "Inauguration Ceremony - 2026",
-            image: "/src/assets/group_photo.jpg",
+            title: "Inauguration Ceremony - 2025-2026",
+            image: groupPhoto,
             category: "Events"
         }
         // Add more items here as needed

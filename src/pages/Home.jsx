@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import groupPhoto from '../assets/group_photo.jpg';
 import './Home.css';
 
 function Home() {
@@ -273,7 +274,7 @@ function Home() {
                 <div className="container" style={{ textAlign: 'center' }}>
                     <div className="group-photo-container">
                         <img
-                            src="/src/assets/group_photo.jpg"
+                            src={groupPhoto}
                             alt="Cyber Intelligence Hub Group"
                             className="group-photo"
                             onError={(e) => { e.target.src = logo; }}
