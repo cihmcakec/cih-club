@@ -41,6 +41,10 @@ function Navbar() {
                     <span></span>
                     <span></span>
                 </div>
+                <div
+                    className={`nav-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                ></div>
                 <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`} id="navMenu">
                     <li>
                         <Link
