@@ -1,0 +1,229 @@
+.preloader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050510;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.preloader-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    z-index: 10;
+}
+
+.logo-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+    z-index: 2;
+}
+
+.preloader-logo .glow {
+    color: #00f3ff;
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.8), 0 0 50px rgba(0, 243, 255, 0.4);
+}
+
+.scanning-ring {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 2px solid transparent;
+    border-top: 2px solid #00f3ff;
+    border-right: 2px solid #00f3ff;
+    border-radius: 50%;
+    animation: rotate 1.5s linear infinite;
+}
+
+.scanning-ring-outer {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px dashed rgba(0, 243, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate-reverse 3s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.status-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-text {
+    color: #00f3ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    height: 1.2rem;
+}
+
+.loading-bar-wrapper {
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 243, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-bar-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00f3ff, #ff00ff);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.7);
+    transition: width 0.1s ease;
+}
+
+.percentage {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* Particles Effect */
+.data-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    bottom: -20px;
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(to top, transparent, #00f3ff);
+    opacity: 0;
+    animation: float-up linear infinite;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* Glitch Lines */
+.glitch-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.glitch-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 243, 255, 0.1);
+    animation: glitch-anim 4s steps(1) infinite;
+}
+
+.glitch-line:nth-child(1) {
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.glitch-line:nth-child(2) {
+    top: 50%;
+    animation-delay: 1.5s;
+}
+
+.glitch-line:nth-child(3) {
+    top: 80%;
+    animation-delay: 3s;
+}
+
+@keyframes glitch-anim {
+    0% {
+        transform: scaleY(1);
+        opacity: 0;
+    }
+
+    1% {
+        transform: scaleY(5);
+        opacity: 0.2;
+    }
+
+    2% {
+        transform: scaleY(1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scaleY(1);
+        opacity: 0;
+    }
+}
+
+/* Transition out */
+.preloader-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
