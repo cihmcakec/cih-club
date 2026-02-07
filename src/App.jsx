@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -8,11 +8,30 @@ import Gallery from './pages/Gallery';
 import Events from './pages/Events';
 import Initiatives from './pages/Initiatives';
 import NotFound from './pages/NotFound';
+import OfflinePage from './components/OfflinePage';
 import Preloader from './components/Preloader';
 import './App.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  if (!isOnline) {
+    return <OfflinePage />;
+  }
 
   if (isLoading) {
     return <Preloader onLoadingComplete={() => setIsLoading(false)} />;
