@@ -23,16 +23,16 @@ const OfflinePage = () => {
             </div>
 
             <div className="offline-content">
-                <h1 className="glitch-text" data-text="CONNECTION SEVERED">CONNECTION SEVERED</h1>
-                <div className="status-badge">OUTSIDE PERIMETER</div>
+                <h1 className="glitch-text" data-text="SYSTEM OFFLINE">SYSTEM OFFLINE</h1>
+                <div className="status-badge">CONNECTION LOST</div>
 
                 <p className="offline-description">
-                    The secure uplink to the **Cyber Intelligence Hub** has been terminated.
-                    Your neural link is currently operating in offline mode.
+                    Unable to establish a secure link to the Cyber Intelligence Hub.
+                    Please check your network connection and try again.
                 </p>
 
                 <div className="retry-box">
-                    <span className="scanning-text">RESCANNING FOR FREQUENCIES{dots}</span>
+                    <span className="scanning-text">RECONNECTING{dots}</span>
                     <div className="scanning-bar">
                         <div className="scanning-progress"></div>
                     </div>
@@ -42,15 +42,9 @@ const OfflinePage = () => {
                     className="reconnect-btn"
                     onClick={() => window.location.reload()}
                 >
-                    <span className="btn-icon">⚡</span>
-                    ATTEMPT RE-LOGIN
+                    <span className="btn-icon"></span>
+                    RETRY CONNECTION
                 </button>
-
-                <div className="error-logs">
-                    <div className="log-line">ERR_UL_SIGNAL_LOST_0x404</div>
-                    <div className="log-line">Pinging gateway 1.1.1.1... Timed Out</div>
-                    <div className="log-line">Network Adapter: Status Unknown</div>
-                </div>
             </div>
 
             <div className="flicker-overlay"></div>

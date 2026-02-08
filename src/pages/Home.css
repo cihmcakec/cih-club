@@ -726,3 +726,102 @@
         padding: 40px 15px !important;
     }
 }
+
+/* --- Featured Events (Small Cards) --- */
+.featured-events-section {
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.events-small-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 40px auto 0;
+}
+
+.event-small-card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background: rgba(10, 15, 30, 0.6);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.event-small-card:hover {
+    transform: translateY(-5px);
+    border-color: #00f3ff;
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
+}
+
+.event-small-image-container {
+    height: 140px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+}
+
+.event-small-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-small-card:hover .event-small-image {
+    transform: scale(1.1);
+}
+
+.event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.event-overlay i {
+    color: #fff;
+    font-size: 1.5rem;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.event-small-card:hover .event-overlay {
+    opacity: 1;
+}
+
+.event-small-card:hover .event-overlay i {
+    transform: scale(1);
+}
+
+.event-small-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.event-small-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.event-small-date {
+    font-size: 0.9rem;
+    color: #00f3ff;
+    text-transform: uppercase;
+}

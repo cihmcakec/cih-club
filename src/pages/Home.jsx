@@ -93,6 +93,17 @@ function Home() {
         { name: "KARTHIKEYAN P", role: "Joint Secretary", image: "/members/karthikeyan_p.jpg" }
     ];
 
+    const featuredEvents = [
+        {
+            id: 1,
+            title: "ORION 2K26",
+            date: "Coming Soon",
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+            link: "https://orion-2k26.netlify.app/",
+            isExternal: true
+        }
+    ];
+
     return (
         <div className="home-container">
             {/* Hero Section */}
@@ -240,6 +251,36 @@ function Home() {
                     <Link to="/office-bearers" className="btn btn-primary" style={{ display: 'inline-flex' }}>
                         View Full Committee <i className="fas fa-arrow-right" style={{ marginLeft: '10px' }}></i>
                     </Link>
+                </div>
+            </section>
+
+            {/* Featured Events Section - Small Cards */}
+            <section className="featured-events-section reveal">
+                <div className="section-header">
+                    <h2 className="section-title">Upcoming Events</h2>
+                    <div className="title-underline"></div>
+                </div>
+                <div className="events-small-grid">
+                    {featuredEvents.map((event) => (
+                        <a
+                            key={event.id}
+                            href={event.link}
+                            target={event.isExternal ? "_blank" : "_self"}
+                            rel={event.isExternal ? "noopener noreferrer" : ""}
+                            className="event-small-card"
+                        >
+                            <div className="event-small-image-container">
+                                <img src={event.image} alt={event.title} className="event-small-image" />
+                                <div className="event-overlay">
+                                    <i className="fas fa-external-link-alt"></i>
+                                </div>
+                            </div>
+                            <div className="event-small-info">
+                                <h3 className="event-small-title">{event.title}</h3>
+                                <div className="event-small-date">{event.date}</div>
+                            </div>
+                        </a>
+                    ))}
                 </div>
             </section>
 
