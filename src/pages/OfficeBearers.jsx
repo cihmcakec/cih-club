@@ -62,7 +62,8 @@ function OfficeBearers() {
             { name: "KIRUTHIGA N T", year: "I MCA", image: "kiruthiga_n_t.jpg" },
             { name: "LOGITH S", year: "I MCA", image: "logith_s.jpg" },
             { name: "ABINAYA S", year: "I MCA", image: "abinaya_s.jpg" },
-            { name: "RAJA G", year: "I MCA", image: "raja_g.jpg" }
+            { name: "RAJA G", year: "I MCA", image: "raja_g.jpg" },
+            { name: "ABIRADHIE", year: "I MCA", image: "abiradhie.jpg" }
         ]
     };
 

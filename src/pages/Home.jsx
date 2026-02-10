@@ -192,7 +192,7 @@ function Home() {
             <section className="stats-section reveal">
                 <div className="stats-grid" style={{ display: 'flex', justifyContent: 'center' }}>
                     <div className="stat-item">
-                        <span className="stat-number" data-target="10">0</span>
+                        <span className="stat-number" data-target="11">0</span>
                         <span className="stat-label">Active Members</span>
                     </div>
                 </div>
