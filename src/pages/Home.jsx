@@ -217,6 +217,9 @@ function Home() {
                                 alt={faculty.name}
                                 className="faculty-image"
                                 onError={(e) => { e.target.src = logo; }}
+                                onContextMenu={(e) => e.preventDefault()}
+                                onDragStart={(e) => e.preventDefault()}
+                                style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
                             />
                             <h4 className="faculty-name" style={{ fontSize: '1.8rem', color: '#fff', fontFamily: 'Orbitron' }}>{faculty.name}</h4>
                             <span className="faculty-role" style={{ color: '#00f3ff', textTransform: 'uppercase', letterSpacing: '2px' }}>{faculty.role}</span>
@@ -241,6 +244,9 @@ function Home() {
                                 alt={leader.name}
                                 className="leader-image"
                                 onError={(e) => { e.target.src = logo; }} // Fallback
+                                onContextMenu={(e) => e.preventDefault()}
+                                onDragStart={(e) => e.preventDefault()}
+                                style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
                             />
                             <h3 className="leader-name">{leader.name}</h3>
                             <div className="leader-role">{leader.role}</div>

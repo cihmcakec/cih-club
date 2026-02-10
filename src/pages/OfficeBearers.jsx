@@ -56,14 +56,14 @@ function OfficeBearers() {
             { name: "DHUSYANTH GHAGEN SINGH M", year: "I MCA", image: "dhusyanth_ghagen_singh_m.jpg" }
         ],
         members: [
+            { name: "ABINAYA S", year: "I MCA", image: "abinaya_s.jpg" },
+            { name: "ABIRADHIE", year: "I MCA", image: "abiradhie.jpg" },
             { name: "KABISA P", year: "I MCA", image: "kabisa_p.jpg" },
-            { name: "OVIYA R", year: "I MCA", image: "oviya_r.jpg" },
-            { name: "PAVITRA S", year: "I MCA", image: "pavitra_s.jpg" },
             { name: "KIRUTHIGA N T", year: "I MCA", image: "kiruthiga_n_t.jpg" },
             { name: "LOGITH S", year: "I MCA", image: "logith_s.jpg" },
-            { name: "ABINAYA S", year: "I MCA", image: "abinaya_s.jpg" },
-            { name: "RAJA G", year: "I MCA", image: "raja_g.jpg" },
-            { name: "ABIRADHIE", year: "I MCA", image: "abiradhie.jpg" }
+            { name: "OVIYA R", year: "I MCA", image: "oviya_r.jpg" },
+            { name: "PAVITRA S", year: "I MCA", image: "pavitra_s.jpg" },
+            { name: "RAJA G", year: "I MCA", image: "raja_g.jpg" }
         ]
     };
 
@@ -81,6 +81,9 @@ function OfficeBearers() {
                             alt={bearer.name}
                             onError={() => setImageError(true)}
                             className="member-photo"
+                            onContextMenu={(e) => e.preventDefault()}
+                            onDragStart={(e) => e.preventDefault()}
+                            style={{ userSelect: 'none', WebkitUserDrag: 'none' }}
                         />
                     ) : (
                         <div className="bearer-icon">
