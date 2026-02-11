@@ -44,6 +44,9 @@ function Footer() {
                             <a href="https://github.com/cihmcakec" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                 <i className="fab fa-github"></i>
                             </a>
+                            <a href="http://www.youtube.com/@CYBERINTELLIGENCEHUH_KEC" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                                <i className="fab fa-youtube"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
