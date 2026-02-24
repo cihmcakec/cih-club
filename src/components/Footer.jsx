@@ -29,7 +29,7 @@ function Footer() {
                     <div className="footer-section">
                         <h4 className="footer-heading">Contact Us</h4>
                         <ul className="footer-contact">
-                            <li><i className="fas fa-envelope"></i> cih.mca.kec@gmail.com</li>
+                            <li><i className="fas fa-envelope"></i> cyberintelligencehubkec@gmail.com</li>
                             <li><i className="fas fa-phone"></i> +91 883 826 2412</li>
                             <li><i className="fas fa-phone"></i> +91 95667 23397</li>
                             <li><i className="fas fa-map-marker-alt"></i> Kongu Engineering College,<br />Perundurai, Erode,<br />Tamil Nadu 638060</li>
