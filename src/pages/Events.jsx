@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import orionBanner from '../assets/orion-2k26.jpeg';
 import './Events.css';
 
 function Events() {
@@ -28,28 +27,65 @@ function Events() {
         return () => clearInterval(timer);
     }, []);
 
-    const events_list = [
-        "Innosell", "Story2Screen", "Fix & Flex", "Brain Blitz",
-        "Reel Rush", "Reboot the Waste", "Lock & Seek", "Brandit"
+    const orion_event = {
+        name: "ORION 2K26",
+        location: "C K PRAHALAD SEMINAR HALL",
+        date: "MARCH 5, 2026",
+        desc: "Annual Technical Symposium hosted by MCA Association. A massive celebration of technical innovation and creative excellence.",
+        link: "https://orion-2k26.netlify.app/"
+    };
+
+    const other_events = [
+        {
+            name: "Hands-on Tools Workshop",
+            icon: "fas fa-tools",
+            location: "Cyber Security Lab",
+            date: "One Day Session",
+            desc: "Immersive one-day workshop on essential cybersecurity tools and technical defense."
+        },
+        {
+            name: "Cyber Awareness Research",
+            icon: "fas fa-search",
+            location: "Campus-wide",
+            date: "Ongoing Survey",
+            desc: "Comprehensive research initiative investigating digital security awareness among faculty and students."
+        }
     ];
 
     return (
         <div className="events-container">
-            {/* Event Header Card */}
+            {/* Main Header */}
             <div className="event-main-card">
-                <div className="event-status-badge">
-                    <div className="status-dot"></div>
-                    <span className="status-text">REGISTRATION OPEN</span>
-                </div>
                 <div className="event-college-info">
                     <h2>KONGU ENGINEERING COLLEGE</h2>
                     <div className="event-association">ASSOCIATION OF COMPUTER APPLICATIONS</div>
                 </div>
 
-                <div className="event-title-badge">
-                    <h1 className="event-name">ORION 2K26</h1>
-                    <div className="event-date">MARCH 5, 2026</div>
-                    <div className="event-venue">C K PRAHALAD SEMINAR HALL (MCA / MBA BLOCK)</div>
+                {/* Orion Section - Now Matching the new Card Style */}
+                <div className="featured-event-header">
+                    <h2 className="section-title-small" style={{ color: '#ff00ff', fontFamily: 'Orbitron' }}>Featured Event</h2>
+                    <div className="section-line-small" style={{ background: '#00f3ff' }}></div>
+                </div>
+
+                <div className="discovery-grid">
+                    <div className="event-detail-card featured-orion">
+                        <div className="accent-bar" style={{ background: 'linear-gradient(to bottom, #00f3ff, #ff00ff)' }}></div>
+                        <div className="card-body">
+                            <h3 className="event-card-title" style={{ color: '#fff', fontSize: '2rem' }}>{orion_event.name}</h3>
+                            <div className="card-info-row">
+                                <i className="fas fa-map-marker-alt"></i>
+                                <span>{orion_event.location}</span>
+                            </div>
+                            <div className="card-info-row">
+                                <i className="far fa-calendar-alt"></i>
+                                <span>{orion_event.date}</span>
+                            </div>
+                            <p className="event-card-desc">"{orion_event.desc}"</p>
+                            <a href={orion_event.link} target="_blank" rel="noopener noreferrer" className="btn-register-small" style={{ background: '#00f3ff', color: '#000', textDecoration: 'none' }}>
+                                VIEW EVENT SITE <i className="fas fa-external-link-alt" style={{ marginLeft: '5px' }}></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Countdown Timer */}
@@ -72,53 +108,37 @@ function Events() {
                     </div>
                 </div>
 
-                {/* Workshop Spotlight */}
-                <div className="workshop-highlight">
-                    <span className="workshop-label">Free Workshop</span>
-                    <h2 className="workshop-name">Cyber Security Career Bootcamp</h2>
-                    <p style={{ color: '#ffd700', fontWeight: 'bold' }}>MISSION: HIGH-LEVEL BOOTCAMP STARTED</p>
+                {/* Other Initiatives Section */}
+                <div className="other-events-header" style={{ marginTop: '60px', textAlign: 'center' }}>
+                    <h2 className="section-title-small" style={{ color: '#00f3ff', fontFamily: 'Orbitron', fontSize: '1.8rem' }}>Upcoming Events</h2>
+                    <div className="section-line-small" style={{ height: '2px', width: '100px', background: '#ff00ff', margin: '15px auto' }}></div>
                 </div>
 
-                {/* Events Grid */}
-                <div className="event-list">
-                    {events_list.map((event, index) => (
-                        <div key={index} className="event-item">
-                            <i className="fas fa-check-square"></i>
-                            <span>{event}</span>
+                <div className="event-details-grid">
+                    {other_events.map((event, index) => (
+                        <div key={index} className="event-detail-card">
+                            <div className="accent-bar"></div>
+                            <div className="card-body">
+                                <h3 className="event-card-title">{event.name}</h3>
+                                <div className="card-info-row">
+                                    <i className="fas fa-map-marker-alt"></i>
+                                    <span>{event.location}</span>
+                                </div>
+                                <div className="card-info-row">
+                                    <i className="far fa-calendar-alt"></i>
+                                    <span>{event.date}</span>
+                                </div>
+                                <p className="event-card-desc">"{event.desc}"</p>
+                                <button className="btn-register-small">PARTICIPATE</button>
+                            </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Quick Info & Registration */}
-                <div className="info-grid">
-                    <div className="register-card">
-                        <h3>SAVE THE DATE</h3>
-                        <div className="banner-box" style={{
-                            width: '100%',
-                            marginTop: '20px',
-                            borderRadius: '10px',
-                            overflow: 'hidden',
-                            border: '1px solid rgba(0, 243, 255, 0.3)'
-                        }}>
-                            <img src={orionBanner} alt="Orion 2K26 Banner" style={{ width: '100%', display: 'block' }} />
-                        </div>
-                        <div className="reg-price" style={{ marginTop: '20px' }}>Entry: ₹ 200</div>
-                    </div>
-
-                    <div className="contact-info">
-                        <div className="contact-row">
-                            <span className="contact-label">FACULTY COORDINATOR</span>
-                            <div className="contact-value">Dr.M.Pyingkodi</div>
-                            <div className="contact-phone">9943114104</div>
-                        </div>
-                        <div className="contact-row">
-                            <span className="contact-label">STUDENT COORDINATORS</span>
-                            <div className="contact-value">Balaji Hariharan N S & Kaliswary K</div>
-                        </div>
-                        <Link to="/" className="btn btn-primary" style={{ marginTop: '20px', width: '100%', justifyContent: 'center' }}>
-                            <i className="fas fa-arrow-left"></i> Home
-                        </Link>
-                    </div>
+                <div style={{ textAlign: 'center', marginTop: '60px' }}>
+                    <Link to="/" className="btn btn-primary" style={{ display: 'inline-flex' }}>
+                        <i className="fas fa-arrow-left" style={{ marginRight: '10px' }}></i> Back to Home
+                    </Link>
                 </div>
             </div>
         </div>

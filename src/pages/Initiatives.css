@@ -1,0 +1,214 @@
+.initiatives-page {
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+    background: radial-gradient(circle at center, #1a1a40 0%, #050510 70%);
+    position: relative;
+    z-index: 10;
+}
+
+.initiatives-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.initiatives-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.initiatives-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    background: linear-gradient(to bottom, #fff, #00f3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+    margin-bottom: 20px;
+}
+
+.initiatives-subtitle {
+    color: #a0a0c0;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.initiative-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.initiative-card:hover {
+    transform: translateY(-10px);
+    border-color: #00f3ff;
+    box-shadow: 0 15px 40px rgba(0, 243, 255, 0.2);
+}
+
+.initiative-accent {
+    width: 6px;
+    background: linear-gradient(to bottom, #00f3ff, #ff00ff);
+    height: 100%;
+}
+
+.initiative-body {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.initiative-icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 243, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.initiative-icon-box i {
+    color: #00f3ff;
+    font-size: 1.5rem;
+}
+
+.initiative-name {
+    font-size: 1.8rem;
+    font-family: 'Rajdhani', sans-serif;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+}
+
+.initiative-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00f3ff;
+    font-size: 0.9rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.meta-item i {
+    width: 15px;
+    font-size: 0.8rem;
+}
+
+.initiative-desc {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.btn-initiative {
+    margin-top: auto;
+    background: transparent;
+    border: 1px solid #00f3ff;
+    color: #00f3ff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-initiative:hover {
+    background: #00f3ff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+/* Section Dividers */
+.section-divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0 30px;
+}
+
+.divider-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #00f3ff;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.section-divider.upcoming .divider-text {
+    color: #ff00ff;
+}
+
+.divider-line {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(90deg, rgba(0, 243, 255, 0.5), transparent);
+}
+
+.section-divider.upcoming .divider-line {
+    background: linear-gradient(90deg, rgba(255, 0, 255, 0.5), transparent);
+}
+
+/* Status Tags */
+.status-tag {
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(0, 243, 255, 0.1);
+    width: fit-content;
+}
+
+.status-tag[data-status="Upcoming"] {
+    background: rgba(255, 0, 255, 0.1);
+    color: #ff00ff !important;
+}
+
+.status-tag[data-status="Planning"] {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700 !important;
+}
+
+.upcoming-special {
+    border-color: rgba(255, 0, 255, 0.3) !important;
+}
+
+.upcoming-special:hover {
+    border-color: #ff00ff !important;
+    box-shadow: 0 15px 40px rgba(255, 0, 255, 0.2) !important;
+}
+
+.back-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .initiatives-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -9,6 +9,24 @@
 }
 
 /* Event Hero Card */
+.featured-event-header {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.discovery-grid {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.featured-orion {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(0, 243, 255, 0.05) !important;
+    border-color: rgba(0, 243, 255, 0.3) !important;
+}
+
 .event-main-card {
     background: rgba(10, 15, 30, 0.7);
     backdrop-filter: blur(20px);
@@ -49,29 +67,106 @@
     margin-top: 5px;
 }
 
-.event-title-badge {
+/* Featured Orion Card */
+.orion-featured-link {
+    text-decoration: none;
+    display: block;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.orion-featured-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+    border: 1px solid rgba(0, 243, 255, 0.4);
+    border-radius: 20px;
+    padding: 40px;
     text-align: center;
-    margin: 40px 0;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+    transition: all 0.3s ease;
 }
 
-.event-name {
+.click-prompt {
+    margin-top: 25px;
+    color: #00f3ff;
+    font-size: 0.8rem;
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(3rem, 10vw, 6rem);
+    letter-spacing: 2px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.orion-featured-link:hover .click-prompt {
+    opacity: 1;
+    text-shadow: 0 0 10px #00f3ff;
+}
+
+.orion-featured-card:hover {
+    border-color: #00f3ff;
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.orion-badge {
+    background: #00f3ff;
+    color: #000;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 5px 15px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.event-name-small {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 900;
-    background: linear-gradient(to bottom, #fff, #00f3ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+    color: #fff;
     margin: 0;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+    letter-spacing: 5px;
 }
 
-.event-date {
+.event-date-small {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ff00ff;
-    margin-top: 10px;
-    letter-spacing: 5px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.event-venue-small {
+    color: #a0a0c0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-glitch-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(0, 243, 255, 0.2),
+            transparent);
+    transition: 0.5s;
+}
+
+.orion-featured-card:hover .card-glitch-effect {
+    left: 100%;
+    transition: 0.7s;
 }
 
 /* Countdown Timer Styling */
@@ -153,39 +248,99 @@
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-/* Event List Grid */
-.event-list {
+/* Event Detail Cards (Matching Reference Layout) */
+.event-details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin: 40px 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
 }
 
-.event-item {
-    background: rgba(255, 255, 255, 0.03);
+.event-detail-card {
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 15px 20px;
-    border-radius: 8px;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.event-detail-card:hover {
+    transform: translateY(-5px);
+    border-color: #00f3ff;
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.15);
+}
+
+.accent-bar {
+    width: 6px;
+    background: #00f3ff;
+    /* Matching the green/cyan accent */
+    height: 100%;
+}
+
+.event-detail-card .card-body {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.event-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00f3ff;
+    /* Green/Cyan heading */
+    margin: 0;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.card-info-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    transition: all 0.3s ease;
+    gap: 10px;
+    color: #a0a0c0;
+    font-size: 0.95rem;
 }
 
-.event-item:hover {
-    background: rgba(0, 243, 255, 0.05);
-    border-color: #00f3ff;
-    transform: translateX(5px);
+.card-info-row i {
+    font-size: 0.85rem;
+    width: 15px;
 }
 
-.event-item i {
+.event-card-desc {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 5px 0 10px;
+}
+
+.btn-register-small {
+    background: transparent;
+    border: 1px solid #00f3ff;
     color: #00f3ff;
-    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    font-family: 'Orbitron', sans-serif;
 }
 
-.event-item span {
-    font-size: 1.1rem;
-    font-weight: 500;
+.btn-register-small:hover {
+    background: #00f3ff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+@media (max-width: 480px) {
+    .event-details-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Registration Section */
