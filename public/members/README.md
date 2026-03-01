@@ -37,7 +37,7 @@ Name each image file using the member's name in lowercase with underscores inste
 - `kabisa_p.jpg` - KABISA P (I MCA)
 - `oviya_r.jpg` - OVIYA R (I MCA)
 - `pavitra_s.jpg` - PAVITRA S (I MCA)
-- `kiruthiga_n_t.jpg` - KIRUTHIGA N T (I MCA)
+- `kiruthika_n_t.jpg` - KIRUTHIKA N T (I MCA)
 - `logith_s.jpg` - LOGITH S (I MCA)
 - `abinaya_s.jpg` - ABINAYA S (I MCA)
 - `raja_g.jpg` - RAJA G (I MCA)

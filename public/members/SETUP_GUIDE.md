@@ -28,7 +28,7 @@ Use the exact naming from the list below:
 - `kabisa_p.jpg`
 - `oviya_r.jpg`
 - `pavitra_s.jpg`
-- `kiruthiga_n_t.jpg`
+- `kiruthika_n_t.jpg`
 - `logith_s.jpg`
 - `abinaya_s.jpg`
 - `raja_g.jpg`
